@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">BookBank</string>
+    <string name="email">Email</string>
+    <string name="pwd">Password</string>
+    <string name="sing_in">Sing In</string>
+    <string name="online_library_service">Online Library Service</string>
+    <string name="forgot_pwd">Forgot password?</string>
+    <string name="sing_up">Sing Up</string>
+    <string name="or">or</string>
 </resources>
