@@ -7,4 +7,7 @@
     <string name="forgot_pwd">Forgot password?</string>
     <string name="sing_up">Sing Up</string>
     <string name="or">or</string>
+    <string name="launch_sing_up">com.example.bookbank.RegisterActivity</string>
+    <string name="error_obligatory_field">Required</string>
+    <string name="launch_forgot_pwd">com.example.bookbank.ForgotPwdActivity</string>
 </resources>
