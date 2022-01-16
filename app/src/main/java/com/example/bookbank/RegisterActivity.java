@@ -1,5 +1,7 @@
 package com.example.bookbank;
 
+import static misc.Check.isEmpty;
+import static misc.Check.pwdAreEquals;
 import static misc.Constants.path_backend;
 
 import android.app.Activity;
@@ -42,29 +44,15 @@ public class RegisterActivity extends Activity {
         bttback.setOnClickListener(view -> startActivity(isingin));
 
         bttsingup.setOnClickListener(view -> {
-            String email = Objects.requireNonNull(tilemail.getEditText()).getText().toString();
-            String pwd = Objects.requireNonNull(tilpwd.getEditText()).getText().toString();
-            String confirmpwd = Objects.requireNonNull(tilconfirmpwd.getEditText()).getText().toString();
+            boolean isEmptyEmail = isEmpty(tilemail);
+            boolean isEmptyPwd = isEmpty(tilpwd);
+            boolean isEmptyConfirmPwd = isEmpty(tilconfirmpwd);
 
-            if (email.isEmpty() || pwd.isEmpty() || confirmpwd.isEmpty()) {
-                if (email.isEmpty()) {
-                    tilemail.setError(getString(R.string.error_obligatory_field));
-                    tilemail.requestFocus();
-                }
-                if (pwd.isEmpty()) {
-                    tilpwd.setError(getString(R.string.error_obligatory_field));
-                    tilpwd.requestFocus();
-                }
-                if (confirmpwd.isEmpty()) {
-                    tilconfirmpwd.setError(getString(R.string.error_obligatory_field));
-                    tilconfirmpwd.requestFocus();
-                }
-            }
-            else if (!pwd.equals(confirmpwd)) {
-                tilconfirmpwd.setError(getString(R.string.error_password));
-                tilconfirmpwd.requestFocus();
-            }
-            else {
+            if (!isEmptyEmail && !isEmptyPwd && !isEmptyConfirmPwd && pwdAreEquals(tilconfirmpwd, tilpwd)) {
+                String email = Objects.requireNonNull(tilemail.getEditText()).getText().toString();
+                String pwd = Objects.requireNonNull(tilpwd.getEditText()).getText().toString();
+                String confirmpwd = Objects.requireNonNull(tilconfirmpwd.getEditText()).getText().toString();
+
                 JSONObject jsonObject = new JSONObject();
                 try {
                     jsonObject.put("email", email);

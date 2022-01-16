@@ -1,5 +1,6 @@
 package com.example.bookbank;
 
+import static misc.Check.isEmpty;
 import static misc.Constants.path_backend;
 
 import android.app.Activity;
@@ -47,20 +48,13 @@ public class LoginActivity extends Activity {
         });
 
         bttsingin.setOnClickListener(view -> {
-            String email = Objects.requireNonNull(tilemail.getEditText()).getText().toString();
-            String pwd = Objects.requireNonNull(tilpwd.getEditText()).getText().toString();
+            boolean isEmptyEmail = isEmpty(tilemail);
+            boolean isEmptyPwd = isEmpty(tilpwd);
 
-            if (email.isEmpty() || pwd.isEmpty()) {
-                if (email.isEmpty()) {
-                    tilemail.setError(getString(R.string.error_obligatory_field));
-                    tilemail.requestFocus();
-                }
-                if (pwd.isEmpty()) {
-                    tilpwd.setError(getString(R.string.error_obligatory_field));
-                    tilpwd.requestFocus();
-                }
-            }
-            else {
+            if (!isEmptyEmail && !isEmptyPwd) {
+                String email = Objects.requireNonNull(tilemail.getEditText()).getText().toString();
+                String pwd = Objects.requireNonNull(tilpwd.getEditText()).getText().toString();
+
                 JSONObject jsonObject = new JSONObject();
                 try {
                     jsonObject.put("email", email);
