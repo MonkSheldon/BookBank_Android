@@ -87,7 +87,7 @@ public class LoginActivity extends Activity {
                                 }
                                 else {
                                     Log.i(TAG, "Login email/pwd failed");
-                                    Toast.makeText(LoginActivity.this, "Email and/or password are wrong", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(LoginActivity.this, "Email e/o password sono sbagliate", Toast.LENGTH_LONG).show();
                                 }
                             } catch (JSONException e) {
                                 e.printStackTrace();
