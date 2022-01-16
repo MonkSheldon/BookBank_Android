@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.bookbank">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="true"
@@ -32,6 +34,14 @@
         <activity android:name=".ForgotPwdActivity" android:exported="true">
             <intent-filter>
                 <action android:name="com.example.bookbank.ForgotPwdActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".CatalogActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.bookbank.CatalogActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

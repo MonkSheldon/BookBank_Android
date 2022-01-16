@@ -10,4 +10,5 @@
     <string name="launch_sing_up">com.example.bookbank.RegisterActivity</string>
     <string name="error_obligatory_field">Required</string>
     <string name="launch_forgot_pwd">com.example.bookbank.ForgotPwdActivity</string>
+    <string name="launch_catalog">com.example.bookbank.CatalogActivity</string>
 </resources>
