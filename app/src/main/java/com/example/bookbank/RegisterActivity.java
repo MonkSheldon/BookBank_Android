@@ -7,6 +7,8 @@ import static misc.Constants.path_backend;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
@@ -42,6 +44,33 @@ public class RegisterActivity extends Activity {
         Intent isingin = new Intent(getString(R.string.launch_sing_in));
 
         bttback.setOnClickListener(view -> startActivity(isingin));
+
+        Objects.requireNonNull(tilpwd.getEditText()).addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tilpwd.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+
+        Objects.requireNonNull(tilconfirmpwd.getEditText()).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tilconfirmpwd.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
 
         bttsingup.setOnClickListener(view -> {
             boolean isEmptyEmail = isEmpty(tilemail);

@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.TextView;
@@ -45,6 +47,19 @@ public class LoginActivity extends Activity {
         txtforgotpwd.setOnClickListener(view -> {
             Intent i = new Intent(getString(R.string.launch_forgot_pwd));
             startActivity(i);
+        });
+
+        Objects.requireNonNull(tilpwd.getEditText()).addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tilpwd.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
         });
 
         bttsingin.setOnClickListener(view -> {
