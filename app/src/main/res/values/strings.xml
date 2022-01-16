@@ -8,8 +8,10 @@
     <string name="sing_up">Sing Up</string>
     <string name="or">or</string>
     <string name="launch_sing_up">com.example.bookbank.RegisterActivity</string>
-    <string name="error_obligatory_field">Required</string>
+    <string name="error_obligatory_field">Campo obbligatorio</string>
     <string name="launch_forgot_pwd">com.example.bookbank.ForgotPwdActivity</string>
     <string name="launch_catalog">com.example.bookbank.CatalogActivity</string>
     <string name="confirm_pwd">Conferma password</string>
+    <string name="launch_sing_in">com.example.bookbank.LoginActivity</string>
+    <string name="error_password">Le password non corrispondo</string>
 </resources>
