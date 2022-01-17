@@ -18,4 +18,5 @@
     <string name="code">Codice</string>
     <string name="verify">Verifica</string>
     <string name="return_code">Non hai ricevuto il codice?</string>
+    <string name="launch_change_pwd">com.example.bookbank.ChangePwdActivity</string>
 </resources>
