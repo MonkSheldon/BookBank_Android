@@ -13,7 +13,7 @@
         android:id="@+id/btt_back"
         android:layout_width="25dp"
         android:layout_height="35dp"
-        android:background="@drawable/back" />
+        android:background="@drawable/ic_back" />
 
     <TextView
         android:layout_width="match_parent"
