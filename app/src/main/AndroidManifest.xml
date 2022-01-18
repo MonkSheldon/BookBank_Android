@@ -39,17 +39,25 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CatalogActivity" android:exported="true">
+        <!-- activity android:name=".CatalogActivity" android:exported="true">
             <intent-filter>
                 <action android:name="com.example.bookbank.CatalogActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
+        </activity -->
 
         <activity android:name=".ResetPwdActivity" android:exported="true">
             <intent-filter>
                 <action android:name="com.example.bookbank.ResetPwdActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".NavCompatActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.bookbank.NavCompatActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
