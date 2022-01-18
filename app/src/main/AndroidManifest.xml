@@ -47,9 +47,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ChangePwdActivity" android:exported="true">
+        <activity android:name=".ResetPwdActivity" android:exported="true">
             <intent-filter>
-                <action android:name="com.example.bookbank.ChangePwdActivity" />
+                <action android:name="com.example.bookbank.ResetPwdActivity" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

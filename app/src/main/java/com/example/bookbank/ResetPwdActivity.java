@@ -5,11 +5,11 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-public class ChangePwdActivity extends Activity {
+public class ResetPwdActivity extends Activity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_pwd);
+        setContentView(R.layout.activity_reset_pwd);
     }
 }

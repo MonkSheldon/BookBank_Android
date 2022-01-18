@@ -97,7 +97,7 @@ public class ForgotPwdActivity extends Activity {
 
                 if (code.equals(generatedcode)) {
                     Log.i(TAG, "Verify ok");
-                    Intent i = new Intent(getString(R.string.launch_change_pwd));
+                    Intent i = new Intent(getString(R.string.launch_reset_pwd));
                     i.putExtra("email", email);
                     startActivity(i);
                 }
