@@ -91,7 +91,7 @@ public class LoginActivity extends Activity {
                                     SharedPreferences.Editor edit = pref.edit();
                                     edit.putString("email", email);
                                     edit.apply();
-                                    Intent i = new Intent("com.example.bookbank.NavCompatActivity"/*getString(R.string.launch_catalog)*/);
+                                    Intent i = new Intent(getString(R.string.launch_nav));
                                     startActivity(i);
                                 }
                                 else {
