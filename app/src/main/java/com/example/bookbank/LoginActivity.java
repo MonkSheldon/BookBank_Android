@@ -36,7 +36,12 @@ public class LoginActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //TODO control session
+        SharedPreferences pref = LoginActivity.this.getSharedPreferences("Session Data", MODE_PRIVATE);
+
+        if (pref.getString("email", null) != null) {
+            Intent i = new Intent(getString(R.string.launch_nav));
+            startActivity(i);
+        }
 
         TextInputLayout tilemail = findViewById(R.id.til_email);
         TextView txtforgotpwd = findViewById(R.id.txt_forgot_pwd);
@@ -87,7 +92,6 @@ public class LoginActivity extends Activity {
                             try {
                                 if (response.getBoolean("success")) {
                                     Log.i(TAG, "Login email/pwd ok");
-                                    SharedPreferences pref = LoginActivity.this.getSharedPreferences("Session Data", MODE_PRIVATE);
                                     SharedPreferences.Editor edit = pref.edit();
                                     edit.putString("email", email);
                                     edit.apply();

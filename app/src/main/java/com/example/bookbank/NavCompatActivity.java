@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
@@ -33,6 +34,8 @@ public class NavCompatActivity extends AppCompatActivity {
         NavigationView navview = findViewById(R.id.nav_view);
         ImageButton ibttclose = navview.getHeaderView(0).findViewById(id.ibtt_close);
         NavigationView navviewbottom = findViewById(R.id.nav_view_bottom);
+
+        SharedPreferences pref = NavCompatActivity.this.getSharedPreferences("Session Data", MODE_PRIVATE);
 
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayShowTitleEnabled(false);
@@ -77,7 +80,9 @@ public class NavCompatActivity extends AppCompatActivity {
                             new SettingsFragment()).commit();
                     break;
                 case R.id.nav_exit_to_app:
-                    //TODO session
+                    SharedPreferences.Editor edit = pref.edit();
+                    edit.clear();
+                    edit.apply();
                     Intent i = new Intent(getString(R.string.launch_sing_in));
                     startActivity(i);
             }
