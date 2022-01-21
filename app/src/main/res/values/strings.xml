@@ -24,11 +24,15 @@
     <string name="u10">U10</string>
     <string name="nav_home">Catalogo</string>
     <string name="nav_favorite">Preferiti</string>
-    <string name="nav_basket">Ordini</string>
     <string name="nav_settings">Impostazioni</string>
     <string name="nav_exit_to_app">Esci</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="description_ic_close">Close</string>
     <string name="launch_nav">com.example.bookbank.NavCompatActivity</string>
+    <string name="book">Nome Libro</string>
+    <string name="author">Autore</string>
+    <string name="price">Prezzo</string>
+    <string name="description_ic_favorite">Favorite</string>
+    <string name="tags">Tags</string>
 </resources>

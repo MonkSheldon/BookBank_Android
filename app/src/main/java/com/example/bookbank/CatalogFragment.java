@@ -21,12 +21,8 @@ public class CatalogFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_catalog, container, false);
-        TextView tvtitle = view.findViewById(R.id.tv_title);
 
-        if (favorite)
-            tvtitle.setText("Preferiti");
-        else
-            tvtitle.setText("Catalogo");
+
 
         return view;
     }

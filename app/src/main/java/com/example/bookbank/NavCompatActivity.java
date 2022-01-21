@@ -64,10 +64,6 @@ public class NavCompatActivity extends AppCompatActivity {
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                             new CatalogFragment(true)).commit();
                     break;
-                case R.id.nav_basket:
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            new OrdersFragment()).commit();
-                    break;
             }
             drawer.closeDrawer(GravityCompat.START);
             return true;
