@@ -2,19 +2,23 @@ package com.example.bookbank;
 
 public class Book {
 
+    private final int id;
     private final String name;
     private final String author;
     private final String price;
     private final boolean favorite;
     private final String tags;
 
-    public Book(String name, String author, String price, boolean favorite, String tags) {
+    public Book(int id, String name, String author, String price, boolean favorite, String tags) {
+        this.id = id;
         this.name = name;
         this.author = author;
         this.price = price;
         this.favorite = favorite;
         this.tags = tags;
     }
+
+    public int getId() { return id; }
 
     public String getName() {
         return name;

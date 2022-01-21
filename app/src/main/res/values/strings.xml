@@ -36,4 +36,5 @@
     <string name="description_ic_favorite">Favorite</string>
     <string name="tags">Tags</string>
     <string name="no_book">Nessun libro</string>
+    <string name="launch_book">com.example.bookbank.BookActivity</string>
 </resources>

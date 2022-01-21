@@ -70,7 +70,8 @@ public class CatalogFragment extends Fragment {
                         else {
                             for (int i=0; i<books.length(); ++i) {
                                 JSONObject jsonbook = books.getJSONObject(i);
-                                booklist.add(new Book(jsonbook.getString("name"),
+                                booklist.add(new Book(jsonbook.getInt("id"),
+                                        jsonbook.getString("name"),
                                         jsonbook.getString("author"),
                                         jsonbook.getString("price"),
                                         jsonbook.getBoolean("favorite"),

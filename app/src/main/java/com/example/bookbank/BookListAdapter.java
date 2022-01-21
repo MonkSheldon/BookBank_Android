@@ -2,6 +2,7 @@ package com.example.bookbank;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,7 @@ public class BookListAdapter extends ArrayAdapter<Book> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        int id = getItem(position).getId();
         String name = getItem(position).getName();
         String author = getItem(position).getAuthor();
         String price = getItem(position).getPrice();
@@ -58,7 +60,9 @@ public class BookListAdapter extends ArrayAdapter<Book> {
         }
 
         lladapter.setOnClickListener(view -> {
-            //TODO view book
+            Intent i = new Intent(view.getContext().getString(R.string.launch_book));
+            i.putExtra("id", id);
+            view.getContext().startActivity(i);
         });
 
         ibttfavorite.setOnClickListener(view -> {

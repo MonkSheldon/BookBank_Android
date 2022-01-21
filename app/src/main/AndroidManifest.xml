@@ -54,6 +54,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".BookActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.bookbank.BookActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         
     </application>
 
