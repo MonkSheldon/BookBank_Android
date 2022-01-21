@@ -35,4 +35,5 @@
     <string name="price">Prezzo</string>
     <string name="description_ic_favorite">Favorite</string>
     <string name="tags">Tags</string>
+    <string name="no_book">Nessun libro</string>
 </resources>
