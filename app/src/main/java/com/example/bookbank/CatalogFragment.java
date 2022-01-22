@@ -32,13 +32,17 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
-public class CatalogFragment extends Fragment {
+import interfaces.RemoveItem;
+
+public class CatalogFragment extends Fragment implements RemoveItem {
 
     private final String TAG = "Catalog Fragment";
 
     private Context context;
     private ListView lvbooks;
     private TextView tvnobooks;
+    private BookListAdapter adapter;
+
     private final boolean favorite;
 
     public CatalogFragment(boolean favorite) {
@@ -107,7 +111,7 @@ public class CatalogFragment extends Fragment {
                                         jsonbook.getString("tags")));
                             }
 
-                            BookListAdapter adapter = new BookListAdapter(context, R.layout.adapter_view_book, booklist);
+                            adapter = new BookListAdapter(context, R.layout.adapter_view_book, booklist, favorite, this);
                             lvbooks.setAdapter(adapter);
                         }
                     } catch (JSONException e) {
@@ -118,5 +122,15 @@ public class CatalogFragment extends Fragment {
         );
 
         requestQueue.add(jsonObjectRequest);
+    }
+
+    @Override
+    public void onRemoveItem(int position) {
+        Book book = adapter.getItem(position);
+        adapter.remove(book);
+        adapter.notifyDataSetChanged();
+
+        if (adapter.isEmpty())
+            tvnobooks.setVisibility(View.VISIBLE);
     }
 }

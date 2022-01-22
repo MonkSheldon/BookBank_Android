@@ -6,7 +6,7 @@ public class Book {
     private final String name;
     private final String author;
     private final String price;
-    private final boolean favorite;
+    private boolean favorite;
     private final String tags;
 
     public Book(int id, String name, String author, String price, boolean favorite, String tags) {
@@ -35,6 +35,8 @@ public class Book {
     public boolean isFavorite() {
         return favorite;
     }
+
+    public void setFavorite(boolean favorite) { this.favorite = favorite; }
 
     public String getTags() {
         return tags;

@@ -47,20 +47,21 @@
 
         <ImageButton
             android:id="@+id/ibtt_favorite"
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:layout_gravity="right"
-            android:layout_marginTop="15dp"
-            android:src="@drawable/ic_favorite"
+            android:layout_marginTop="5dp"
             android:background="@android:color/transparent"
             android:contentDescription="@string/description_ic_favorite"
+            android:minWidth="30dp"
+            android:src="@drawable/ic_favorite"
             tools:ignore="RtlHardcoded" />
 
         <TextView
             android:id="@+id/tv_tags"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="6.2dp"
             android:text="@string/tags" />
 
     </LinearLayout>
