@@ -6,12 +6,16 @@ import static misc.Constants.path_backend;
 
 import androidx.fragment.app.Fragment;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,6 +36,9 @@ public class CatalogFragment extends Fragment {
 
     private final String TAG = "Catalog Fragment";
 
+    private Context context;
+    private ListView lvbooks;
+    private TextView tvnobooks;
     private final boolean favorite;
 
     public CatalogFragment(boolean favorite) {
@@ -42,20 +49,42 @@ public class CatalogFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_catalog, container, false);
-        ListView lvbooks = view.findViewById(R.id.lv_books);
-        ArrayList<Book> booklist = new ArrayList<>();
-        TextView tvnobooks = view.findViewById(R.id.tv_no_book);
+        EditText etsearchbooks = view.findViewById(R.id.et_search_books);
+        context = view.getContext();
+        lvbooks = view.findViewById(R.id.lv_books);
+        tvnobooks = view.findViewById(R.id.tv_no_book);
 
-        SharedPreferences pref = view.getContext().getSharedPreferences("Session Data", MODE_PRIVATE);
+        etsearchbooks.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                getbooks(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {}
+        });
+
+        getbooks("");
+
+        return view;
+    }
+
+    private void getbooks(String search) {
+        ArrayList<Book> booklist = new ArrayList<>();
+        SharedPreferences pref = context.getSharedPreferences("Session Data", MODE_PRIVATE);
 
         JSONObject jsonObject = new JSONObject();
         try {
             jsonObject.put("email", pref.getString("email", null));
             jsonObject.put("favorite", favorite);
+            jsonObject.put("search", search);
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        RequestQueue requestQueue = Volley.newRequestQueue(view.getContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(context);
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(
                 Request.Method.GET,
@@ -78,7 +107,7 @@ public class CatalogFragment extends Fragment {
                                         jsonbook.getString("tags")));
                             }
 
-                            BookListAdapter adapter = new BookListAdapter(view.getContext(), R.layout.adapter_view_book, booklist);
+                            BookListAdapter adapter = new BookListAdapter(context, R.layout.adapter_view_book, booklist);
                             lvbooks.setAdapter(adapter);
                         }
                     } catch (JSONException e) {
@@ -89,7 +118,5 @@ public class CatalogFragment extends Fragment {
         );
 
         requestQueue.add(jsonObjectRequest);
-
-        return view;
     }
 }
