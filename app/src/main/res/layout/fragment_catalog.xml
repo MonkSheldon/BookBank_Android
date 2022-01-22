@@ -2,19 +2,41 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@color/search_background">
+        
+        <EditText
+            android:id="@+id/et_search_books"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:hint="@string/search_books"
+            android:textColorHint="@color/search_hint"
+            android:background="@null"
+            android:drawableStart="@drawable/ic_search"
+            android:inputType="text"
+            android:autofillHints="" />
+        
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/lv_books"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:clickable="true"
-        android:focusable="true" />
+        android:layout_marginTop="35dp" />
 
     <TextView
         android:id="@+id/tv_no_book"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:gravity="center_horizontal"
         android:text="@string/no_book"
         android:textStyle="italic"
