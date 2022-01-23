@@ -38,4 +38,6 @@
     <string name="no_book">Nessun libro</string>
     <string name="launch_book">com.example.bookbank.BookActivity</string>
     <string name="search_books">Cerca Libri</string>
+    <string name="description_book">Photo of the book</string>
+    <string name="reviews">Recensioni</string>
 </resources>
