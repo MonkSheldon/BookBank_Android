@@ -40,4 +40,6 @@
     <string name="search_books">Cerca Libri</string>
     <string name="description_book">Photo of the book</string>
     <string name="reviews">Recensioni</string>
+    <string name="change_pwd">Cambia password</string>
+    <string name="launch_change_pwd">com.example.bookbank.ChangePwdActivity</string>
 </resources>
