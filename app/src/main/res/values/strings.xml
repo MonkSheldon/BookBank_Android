@@ -42,4 +42,5 @@
     <string name="reviews">Recensioni</string>
     <string name="change_pwd">Cambia password</string>
     <string name="launch_change_pwd">com.example.bookbank.ChangePwdActivity</string>
+    <string name="current_password">Password attuale</string>
 </resources>
