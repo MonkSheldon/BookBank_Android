@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="light_red">#F85F6A</color>
+    <color name="pink">#e93578</color>
     <color name="item_background">#1AF85F6A</color>
     <color name="item_icon">#BCB9B9</color>
     <color name="search_background">#80DEE2E6</color>

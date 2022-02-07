@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:background="@drawable/round_corner"
+        android:background="@drawable/round_corner_pink"
         android:text="@string/change_pwd"
         android:textColor="@android:color/white" />
 

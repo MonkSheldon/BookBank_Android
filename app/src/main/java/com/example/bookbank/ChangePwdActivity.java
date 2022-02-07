@@ -3,12 +3,11 @@ package com.example.bookbank;
 import static misc.Check.isEmpty;
 import static misc.Check.pwdAreEquals;
 import static misc.Constants.path_backend;
+import static misc.SetError.setErrorToggle;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.Toast;
@@ -43,44 +42,9 @@ public class ChangePwdActivity extends Activity {
 
         bttback.setOnClickListener(view -> onBackPressed());
 
-        Objects.requireNonNull(tilcurrentpwd.getEditText()).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                tilcurrentpwd.setError(null);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
-
-        Objects.requireNonNull(tilnewpwd.getEditText()).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                tilnewpwd.setError(null);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
-
-        Objects.requireNonNull(tilconfirmpwd.getEditText()).addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                tilconfirmpwd.setError(null);
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {}
-        });
+        setErrorToggle(tilcurrentpwd);
+        setErrorToggle(tilnewpwd);
+        setErrorToggle(tilconfirmpwd);
 
         bttchangepwd.setOnClickListener(view -> {
             boolean isEmptyCurrentPwd = isEmpty(tilcurrentpwd);

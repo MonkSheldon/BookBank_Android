@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
@@ -65,6 +66,11 @@ public class NavCompatActivity extends AppCompatActivity {
                             new CatalogFragment(true)).commit();
                     break;
             }
+            Menu menu_navviewbottom = navviewbottom.getMenu();
+            if (menu_navviewbottom.getItem(0).isChecked()) {
+                menu_navviewbottom.clear();
+                navviewbottom.inflateMenu(R.menu.drawer_menu_bottom);
+            }
             drawer.closeDrawer(GravityCompat.START);
             return true;
         });
@@ -81,6 +87,12 @@ public class NavCompatActivity extends AppCompatActivity {
                     edit.apply();
                     Intent i = new Intent(getString(R.string.launch_sing_in));
                     startActivity(i);
+                    break;
+            }
+            Menu menu_navview = navview.getMenu();
+            if (menu_navview.getItem(0).isChecked() || menu_navview.getItem(1).isChecked()) {
+                menu_navview.clear();
+                navview.inflateMenu(R.menu.drawer_menu);
             }
             drawer.closeDrawer(GravityCompat.START);
             return true;
